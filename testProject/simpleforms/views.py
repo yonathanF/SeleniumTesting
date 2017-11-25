@@ -22,7 +22,18 @@ def register(request):
             return render(request, 'simpleforms/register.html')
 
 def login(request):
-    pass
+    if request.method=='GET':
+        return render(request, 'simpleforms/login.html')
+    else:
+        email=request.POST['email']
+        password=request.POST['password']
+    user=authenticate(username=email, password=password)
+    if user is not None:
+        signin(request, user)
+        return redirect('/motivational/home/')
+    else:
+        return render(request, 'simpleforms/login.html')
+
 
 def home(request):
     if request.user.is_authenticated:

@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <h2> Motivational Quotes </h2>
+    <p> Login please!</p>
+
+    <form role="form" action="/motivational/login/" method="post">
+      {% csrf_token %}
+      <input type="email" name="email" placeholder="Email"></br></br>
+      <input type="password" name="password" placeholder="Password"></br></br>
+
+      <button type="submit">Register</button>
+      </form>
+  </body>
+</html>
+
+    

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as signin
+from simpleforms.models import Quote
+import random
 
 def register(request):
     if request.method=='GET':
@@ -39,6 +41,12 @@ def login(request):
 
 def home(request):
     if request.user.is_authenticated:
-        return HttpResponse("worked")
+        qId=random.randint(1,11)
+        quote=Quote.objects.get(pk=qId)
+        
+        context={"name":request.user.first_name+" "+request.user.last_name,
+                 "author":quote.author, "content":quote.content}
+
+        return render(request, 'simpleforms/home.html', context)
     else:
-        return HttpResponse("nah")
+        return redirect('/motivational/login/')

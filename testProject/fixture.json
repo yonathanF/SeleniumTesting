@@ -1,0 +1,83 @@
+[
+{
+    "model":"simpleforms.quote",
+    "pk":1,
+    "fields":{
+	"author":"Maya Angelou",
+	"content":"Try to be a rainbow in someone's cloud."
+    }
+},
+{
+    "model":"simpleforms.quote",
+    "pk":2,
+    "fields":{
+	"author":"Yoko Ono",
+	"content":"Simile in the mirror  Do that every morning and you'll start to see a big difference in your life."
+    }
+},
+
+{
+    "model":"simpleforms.quote",
+    "pk":3,
+    "fields":{
+	"author":"Og Madino",
+	"content":"Always do your best  What you plant now, you will harvest later."
+    }
+},
+{
+    "model":"simpleforms.quote",
+    "pk":4,
+    "fields":{
+	"content":"Love is the only force capable of transforming an enemy into a friend.",
+	"author":"MLK"
+    }
+},
+{
+    "model":"simpleforms.quote",
+    "pk":5,
+    "fields":{
+	"author":"Al Green",
+	"content":"I'm thankful for every moment."
+    }
+},
+{
+    "model":"simpleforms.quote",
+    "pk":6,
+    "fields":{
+	"author":"Nigel Hamilton",
+	"content":"Thanksgiving is a time of togetherness and gratitude ."
+    }
+},
+{
+    "model":"simpleforms.quote",
+    "pk":7,
+    "fields":{
+	"author":"Bruce Lee",
+	"content":"If you love life, don't waste time, for time is what life is made up of."
+    }
+},
+{
+    "model":"simpleforms.quote",
+    "pk":8,
+    "fields":{
+	"author":"Confucius",
+	"content":"Our greatest glory is not in never falling, but in rising every time we fall."
+    }
+},
+{
+    "model":"simpleforms.quote",
+    "pk":9,
+    "fields":{
+	"author":"Henry Ford",
+	"content":"Failure is simply the opportunity to begin again, this time more intelligently."
+    }
+},
+{
+    "model":"simpleforms.quote",
+    "pk":10,
+    "fields":{
+	"author":"Henry Van Dyke",
+	"content":"A friend is what the heart needs all the time."
+    }
+}
+]

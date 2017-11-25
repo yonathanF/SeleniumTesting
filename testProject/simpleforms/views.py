@@ -11,16 +11,18 @@ def register(request):
         last_name=request.POST['last_name']
         email=request.POST['email']
         password=request.POST['password']
-
-        new_user=User.objects.create_user(username=email, first_name=first_name,
+        try:
+            new_user=User.objects.create_user(username=email, first_name=first_name,
                                           last_name=last_name, email=email, password=password)
-        user=authenticate(username=email, password=password)
-        if user is not None:
-            signin(request, user)
-            return redirect('/motivational/home/')
-        else:
-            return render(request, 'simpleforms/register.html')
 
+            user=authenticate(username=email, password=password)
+            if user is not None:
+                signin(request, user)
+                return redirect('/motivational/home/')
+            else:
+                return render(request, 'simpleforms/register.html',{"error":"Try again."})
+        except:
+            return render(request, 'simpleforms/register.html', {"error":"Try again with a different email"})
 def login(request):
     if request.method=='GET':
         return render(request, 'simpleforms/login.html')
@@ -32,7 +34,7 @@ def login(request):
         signin(request, user)
         return redirect('/motivational/home/')
     else:
-        return render(request, 'simpleforms/login.html')
+        return render(request, 'simpleforms/login.html', {"error": "Can't find that account. Try again please."})
 
 
 def home(request):

@@ -5,7 +5,7 @@
 
     <h2> Motivational Quotes </h2>
     <p> Login please!</p>
-
+    {{ error }}
     <form role="form" action="/motivational/login/" method="post">
       {% csrf_token %}
       <input type="email" name="email" placeholder="Email"></br></br>

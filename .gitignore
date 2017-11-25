@@ -2,11 +2,14 @@
 __pycache__/
 *.py[cod]
 *$py.class
-
+*/__init__.py
 # C extensions
 *.so
 
+# project specific
 proj/
+db.sqlite3
+
 
 # Distribution / packaging
 .Python

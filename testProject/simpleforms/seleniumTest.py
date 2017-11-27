@@ -110,7 +110,7 @@ class RegiserTestCase(LiveServerTestCase):
     def test_reg_successful(self):
         driver = self.driver
         fill_reg_form(self.base_url, driver)
-        self.assertTrue("Welcome Atoshem Gheb" in driver.page_source)
+        self.assertTrue("Login please!" in driver.page_source)
 
     def test_reg_account_exists(self):
         driver = self.driver

@@ -19,8 +19,8 @@ def register(request):
 
             user=authenticate(username=email, password=password)
             if user is not None:
-                signin(request, user)
-                return redirect('/motivational/home/')
+
+                return redirect('/motivational/login/')
             else:
                 return render(request, 'simpleforms/register.html',{"error":"Try again."})
         except:

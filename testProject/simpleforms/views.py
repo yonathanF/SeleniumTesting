@@ -31,12 +31,15 @@ def login(request):
     else:
         email=request.POST['email']
         password=request.POST['password']
-    user=authenticate(username=email, password=password)
-    if user is not None:
-        signin(request, user)
-        return redirect('/motivational/home/')
-    else:
-        return render(request, 'simpleforms/login.html', {"error": "Can't find that account. Try again please."})
+        try:
+            user=authenticate(username=email, password=password)
+            if user is not None:
+                signin(request, user)
+                return redirect('/motivational/home/')
+            else:
+                return render(request, 'simpleforms/login.html', {"error": "Can't find that account. Try again please."})
+        except:
+            return render(request, 'simpleforms/login.html', {"error": "Can't find that account. Try again please."})
 
 
 def home(request):

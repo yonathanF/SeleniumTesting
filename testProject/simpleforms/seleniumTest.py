@@ -107,7 +107,7 @@ class RegiserTestCase(LiveServerTestCase):
         self.accept_next_alert = True
 
 
-    def nottest_reg_successful(self):
+    def test_reg_successful(self):
         driver = self.driver
         fill_reg_form(self.base_url, driver)
         self.assertTrue("Login please!" in driver.page_source)

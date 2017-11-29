@@ -9,3 +9,5 @@ class QuoteTestCase(TestCase):
     def test_quote_exists(self):
         quote=Quote.objects.get(author="Tester 1")
         self.assertEqual(quote.content, "TEST TEST")
+
+#trying to trigger build

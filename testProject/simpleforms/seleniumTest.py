@@ -40,7 +40,7 @@ class HomeTestCase(LiveServerTestCase):
 
         fill_reg_form(self.base_url, self.driver)
 
-    def nottest_quotes_display(self):
+    def test_quotes_display(self):
         driver = self.driver
 
         fill_login_form(self.base_url, driver)
@@ -52,7 +52,7 @@ class HomeTestCase(LiveServerTestCase):
         quoteDB=Quote.objects.get(content=quote)
         self.assertFalse(quoteDB is None)
 
-    def nottest_author_display(self):
+    def test_author_display(self):
         driver = self.driver
         fill_login_form(self.base_url, driver)
 
@@ -78,14 +78,14 @@ class LoginTestCase(LiveServerTestCase):
         self.accept_next_alert = True
 
     
-    def nottest_login_successful(self):
+    def test_login_successful(self):
         driver = self.driver
         fill_reg_form(self.base_url, driver)        
         fill_login_form(self.base_url, driver)
         
         self.assertTrue("Welcome Atoshem Gheb" in driver.page_source)
     
-    def nottest_login_account_DNE(self):
+    def test_login_account_DNE(self):
         driver = self.driver
                 
         fill_login_form(self.base_url, driver)
@@ -112,7 +112,7 @@ class RegiserTestCase(LiveServerTestCase):
         fill_reg_form(self.base_url, driver)
         self.assertTrue("Login please!" in driver.page_source)
 
-    def nottest_reg_account_exists(self):
+    def test_reg_account_exists(self):
         driver = self.driver
         fill_reg_form(self.base_url, driver)
         

@@ -78,14 +78,14 @@ class LoginTestCase(LiveServerTestCase):
         self.accept_next_alert = True
 
     
-    def test_login_successful(self):
+    def nottest_login_successful(self):
         driver = self.driver
         fill_reg_form(self.base_url, driver)        
         fill_login_form(self.base_url, driver)
         
         self.assertTrue("Welcome Atoshem Gheb" in driver.page_source)
     
-    def test_login_account_DNE(self):
+    def nottest_login_account_DNE(self):
         driver = self.driver
                 
         fill_login_form(self.base_url, driver)
@@ -107,12 +107,12 @@ class RegiserTestCase(LiveServerTestCase):
         self.accept_next_alert = True
 
 
-    def test_reg_successful(self):
+    def nottest_reg_successful(self):
         driver = self.driver
         fill_reg_form(self.base_url, driver)
         self.assertTrue("Login please!" in driver.page_source)
 
-    def test_reg_account_exists(self):
+    def nottest_reg_account_exists(self):
         driver = self.driver
         fill_reg_form(self.base_url, driver)
         
